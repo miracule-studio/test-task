@@ -5,7 +5,7 @@ import { catchError, map, tap, take } from 'rxjs/operators';
 import { Arrival } from '../models/arrival';
 
 /**
- * Order service using {@link HttpClient} and {@link HttpHeaders}
+ * Arrival service using {@link HttpClient} and {@link HttpHeaders}
  */
 @Injectable({
   providedIn: 'root'
@@ -22,7 +22,7 @@ export class SourceService {
   constructor(private http: HttpClient) { }
 
   /**
-   * Getting array of Orders
+   * Getting array of Array
    * @returns {Observable<Arrival[]>} request with array of Arrivals
    */
   getArrivals(sort?: string, page?: number, perPage?: number): Observable<[any]> {
@@ -33,8 +33,8 @@ export class SourceService {
           return s;
       }),
       tap(x => x.length ?
-            console.log(`found heroes matching "${x.lenght}"`) :
-            console.log(`no heroes matching "${x}"`)),
+            console.log(`found arrays "${x.lenght}"`) :
+            console.log(`no arrays matching "${x}"`)),
       catchError(this.handleError<[Arrival[],any[]]>('getArrivals', [[],[]]))
     
     );
