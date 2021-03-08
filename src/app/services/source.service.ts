@@ -22,7 +22,7 @@ export class SourceService {
   constructor(private http: HttpClient) { }
 
   /**
-   * Getting array of Array
+   * Getting array of Arrival
    * @returns {Observable<Arrival[]>} request with array of Arrivals
    */
   getArrivals(sort?: string, page?: number, perPage?: number): Observable<[any]> {
