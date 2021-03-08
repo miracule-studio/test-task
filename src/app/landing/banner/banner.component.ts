@@ -26,6 +26,10 @@ export class BannerComponent implements OnInit {
   vegetables: string[];
   /** filtered data from vegetables */
   filteredVegetables: Observable<string[]>;
+  /** values for get request */
+  sort: string; 
+  page: number; 
+  perPage:number;
 
   /**
    *  FormBuilder, FormControl for search form
@@ -36,7 +40,7 @@ export class BannerComponent implements OnInit {
   });
 
   /** displayedColumns and dataSource for table of Arrivals */
-  displayedColumns: string[] = ['created_at','origin','to','destination','vehicle_size','distance' ];
+  displayedColumns: string[] = ['load_date','origin','to','destination','vehicle_size','distance' ];
   dataSource: MatTableDataSource<Arrival>;
 
   /**
@@ -54,6 +58,9 @@ export class BannerComponent implements OnInit {
    * run getVeg(), getArrivals() and inst filter
    */
   ngOnInit() {
+    this.sort = 'desc'; 
+    this.page = 1; 
+    this.perPage = 5;
     this.getVeg();
     this.filteredVegetables = this.control.valueChanges.pipe(
       //startWith(''),
@@ -118,7 +125,7 @@ export class BannerComponent implements OnInit {
    * @returns {dataSource}
    */
   getArrivals(){
-    this.sourceService.getArrivals()
+    this.sourceService.getArrivals(this.sort, this.page, this.perPage)
       .subscribe(
         (data) => { this.source = data;
                     this.dataSource = new MatTableDataSource(this.source);

@@ -25,10 +25,10 @@ export class SourceService {
    * Getting array of Orders
    * @returns {Observable<Arrival[]>} request with array of Arrivals
    */
-  getArrivals(): Observable<[any]> {
-    return this.http.get<[any]>(this.arrivalUrl + 'loads?sort%5Bcreated_at%5D=desc&page=1&perPage=15')
+  getArrivals(sort?: string, page?: number, perPage?: number): Observable<[any]> {
+    return this.http.get<[any]>(`${this.arrivalUrl}loads?sort[created_at]=${sort}&page=${page}&perPage=${perPage}`)
       .pipe(map(data => {
-          let s = data['data'].slice(0,5);
+          let s = data['data'];
           console.log(s);
           return s;
       }),
