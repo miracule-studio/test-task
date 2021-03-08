@@ -1,0 +1,39 @@
+#capabilities {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    h2 {
+        max-width: 500px;
+    }
+    p {
+        max-width: 600px;
+    }
+    .display {
+        margin-bottom: 4rem;
+        img:last-child {
+            position: absolute;
+            left: 35%;
+            top: 22.5%;
+        }
+        @media screen and (max-width: 830px){
+            img {
+                width: 200px;
+            }
+        }
+        @media screen and (max-width: 540px){
+            img {
+                width: 180px;
+            }
+        }
+    }
+    h3 {
+        font-size: 1.125rem !important;
+        font-weight: 600 !important;
+    }
+}
+
+@media screen and (max-width: 540px){
+    #capabilities {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}

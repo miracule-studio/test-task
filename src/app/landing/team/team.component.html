@@ -1,0 +1,24 @@
+<section class="container-fluid" id="team">
+    <div class="container">
+        <h2 class="mb-5">Our Team</h2>
+        <p>Our team is built with skilled, highly trained and experienced group of professionals, who all exhibit outstanding leadership skills and have a wide variety of transferable skills acquired in a variety of industries and disciplines. Together, they built a team that is the perfect combination of expertise and capability, and they will make all the efforts required to ensure the success of this endeavour and recognize our short and long-term goals.</p>
+        
+        <swiper [config]="config">
+
+            <div class="swiper-wrapper">
+          
+                <div class="text-center swiper-slide" *ngFor="let user of team">
+                    <img src="./assets/images/{{ user.src }}">
+                    <div class="">
+                        <h4>{{ user.name }}</h4>
+                        <p>{{ user.tel }}</p>
+                        <p>{{ user.mail }}</p>
+                    </div>
+                </div>
+          
+            </div>
+          
+        </swiper>
+    </div>
+</section>
+

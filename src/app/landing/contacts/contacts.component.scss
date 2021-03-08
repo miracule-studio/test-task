@@ -1,0 +1,68 @@
+#contacts {
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+    background: #fafafa;
+    .block-info {
+        p {
+            font-size: 18px;
+        }
+        .cont {
+
+        }
+    }
+    .mat-card {
+        width: 100%;
+        max-width: 472px;
+        box-shadow: none;
+        border-radius: 10px;
+        form {
+            max-width: 332px;
+            margin: 0 auto;
+            .mat-form-field {
+                min-width: 0;
+                max-width: 332px !important;
+                width: 100% !important;
+            }
+            .mat-form-field-appearance-fill {
+                .mat-form-field-flex {
+                    border-radius: 10px !important;
+                    padding: .75em .75em 0 .75em;
+                }
+                .mat-form-field-appearance-fill .mat-form-field-underline::before {
+                    background-color: transparent; 
+                }
+            }
+            button[type=submit] {
+                padding: 7px 35px;
+                border-radius: 10px;
+            }
+            button[type=submit]:not(:disabled) {
+                background-color: #000000;
+                color: #ffffff;
+            }
+        }
+    }
+    //ex
+}
+::ng-deep .form-contact .mat-form-field-prefix { 
+    align-self: flex-start  !important;
+    top: 10px !important;
+}
+::ng-deep .form-contact .mat-form-field-prefix .mat-icon { 
+    font-size: 14px;
+}
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-underline::before {
+    background-color: transparent;
+}
+::ng-deep .mat-form-field .mat-form-field-ripple,
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-ripple, 
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent {
+    background-color: transparent;
+}
+
+@media screen and (max-width: 540px){
+    #contacts {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}

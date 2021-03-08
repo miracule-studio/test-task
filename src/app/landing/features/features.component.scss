@@ -1,0 +1,50 @@
+#features {
+    position: relative;
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+    /*background-size: 100%;*/
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to right, rgba(0,0,0,.8) , rgba(0,0,0,.2));
+        z-index: 0;
+    }
+
+    .container {
+        position: relative;
+        color: #FFFFFF;
+        z-index: 3;
+        h2 {
+            max-width: 360px;
+            line-height: 1.5;
+            font-size: 2.065rem;
+        }
+        p {
+            line-height: 2;
+            font-weight: 100;
+            color: rgba(255,255,255,0.8);
+        }
+    }
+}
+@media screen and (min-width: 1440px){
+    #features {
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-x: center;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+@media screen and (max-width: 992px){
+    #features {
+        background-size: auto 100%;
+        background-position-x: center;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}

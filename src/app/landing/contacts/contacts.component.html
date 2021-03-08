@@ -1,0 +1,56 @@
+<section class="container-fluid" id="contacts">
+    <div class="container">
+        <div class="row">
+            <div class="block-info col-12 col-md-6">
+                <h2 class="mb-5">Get a Quote</h2>
+                <p class="mb-5">Fill up the form and out Team will het back to you within 24 hours.</p>
+                <div class="cont phone pt-3 pb-3">
+                    <img src="./assets/images/phone-call.svg">
+                    +48 656 543 234
+                </div>
+                <div class="cont mail pt-3 pb-3">
+                    <img src="./assets/images/mail.svg">
+                    cargo@kcharles.co.uk
+                </div>
+                <div class="cont address pt-3 pb-3">
+                    <img src="./assets/images/map-pin.svg">
+                    102 Street 214 Don
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <mat-card class="ml-auto pt-5 pb-5">
+                    <mat-card-content>
+                    <form class="form-contact" [formGroup]="options" (ngSubmit)="onSend()">
+                        <mat-form-field appearance="fill" class="mb-2">
+                            <mat-label>Email</mat-label>
+                            <mat-icon matPrefix>mail_outline</mat-icon>
+                            <input matInput placeholder="Email" [formControl]="emailControl" required>
+                            <mat-error *ngIf="emailControl.invalid">{{getErrorEmailModel()}}</mat-error>
+                        </mat-form-field>
+                            
+                        <mat-form-field appearance="fill" class="mb-2">
+                            <mat-label>Phone</mat-label>
+                            <!--<input matInput placeholder="Phone" [formControl]="phoneControl" required>-->
+                            <!--<span matPrefix>+1 &nbsp;</span>-->
+                            <mat-icon matPrefix>phone</mat-icon>
+                            <input type="tel" matInput placeholder="+48 999 999 9999" [formControl]="phoneControl" required>
+                            <mat-error *ngIf="phoneControl.invalid">{{getErrorPhoneName()}}</mat-error>
+                        </mat-form-field>
+            
+                        <mat-form-field appearance="fill" class="mb-2">
+                            <mat-label>Notice</mat-label>
+                            <mat-icon matPrefix>insert_drive_file</mat-icon>
+                            <textarea matInput [formControl]="notesControl" rows="5">Notice</textarea>
+                            <mat-error *ngIf="notesControl.invalid">{{getErrorNotesName()}}</mat-error>
+                        </mat-form-field>
+                            
+                        <div mat-dialog-actions align="end">
+                            <button mat-raised-button type="submit" [disabled]="options.invalid">Send</button>
+                        </div>
+                    </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</section>

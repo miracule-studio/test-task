@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import '~swiper/swiper-bundle';
+@import "@fontsource/rubik";
+@font-face {
+    font-family: "Rubik";
+    src: local("Rubik"), url(./assets/fonts/Rubik/static/Rubik-Regular.ttf) format("truetype");
+}
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: "Rubik", Roboto, "Helvetica Neue", sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    color: rgba(0,0,0,0.9); 
+}
+:host {
+    font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 15px;
+    color: rgba(0,0,0,0.9);
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.bg-black {
+    background-color: #000000 !important;
+}
+h2 {
+    font-weight: 600;
+
+}

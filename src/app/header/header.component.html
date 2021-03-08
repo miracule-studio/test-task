@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img class="logo" src="./assets/images/kcharles.svg" alt="Kcharles">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#modal-menu" aria-controls="modal-menu" aria-expanded="false" 
+              aria-label="Toggle navigation"
+              (click)="openMenu()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#ourServices">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#contacts">Contact</a>
+          </li>
+        </ul>
+        <a href="tel:+44203286696" class="nav-link ">+44 20 3286 696</a>
+        <a href="mailto:cargo@kcharles.co.uk" class="nav-link mail">cargo@kcharles.co.uk</a>
+        <a href="#" class="nav-link signin"><mat-icon>login</mat-icon></a>
+        <a href="#" class="nav-link lang"><mat-icon>language</mat-icon> EN <mat-icon>arrow_drop_down</mat-icon></a>
+      </div>
+    </div>
+</nav>
+
+<div *ngIf="openmenu" id="modal-menu">
+    <button id="modalmenu-close" (click)="closeMenu()">X</button>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#ourServices" (click)="closeMenu()">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#contacts" (click)="closeMenu()">Contact</a>
+        </li>
+    </ul>
+</div>
